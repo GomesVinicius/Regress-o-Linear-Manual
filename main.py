@@ -27,5 +27,5 @@ model.fit(X_standardized, y)
 prever = np.array([[40,  7, 1, 1.50]])
 a = model.predict(prever)
 
-print(model.intercept, model.coefficients)
-print(a)
+# print(model.intercept, model.coefficients)
+# print(a)
