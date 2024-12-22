@@ -11,10 +11,21 @@ X = np.array([
     [25, 10, 1, 1.65]
 ])
 
+#Padronizando a base de entrada
+mean = np.mean(X, axis=0)
+std = np.std(X, axis=0)
+
+X_standardized = (X - mean) / std
+
+# print(X)
+# print(mean, std)
+# print(X_standardized)
+
 model = my_linear_regression()
-model.fit(X, y)
+model.fit(X_standardized, y)
 
 prever = np.array([[40,  7, 1, 1.50]])
 a = model.predict(prever)
 
+print(model.intercept, model.coefficients)
 print(a)
