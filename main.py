@@ -1,5 +1,5 @@
 import numpy as np
-from linear_regression import my_linear_regression
+from linear_regression_manual import my_linear_regression
 
 y = np.array([10, 50, 100, 200, 70])
 
@@ -21,11 +21,12 @@ X_standardized = (X - mean) / std
 # print(mean, std)
 # print(X_standardized)
 
-model = my_linear_regression()
+#exact gradient_descent ridge
+model = my_linear_regression(method='ridge', lambda_rate=0)
 model.fit(X_standardized, y)
 
 prever = np.array([[40,  7, 1, 1.50]])
 a = model.predict(prever)
 
-# print(model.intercept, model.coefficients)
-# print(a)
+print(model.intercept, model.coefficients)
+print(a)
